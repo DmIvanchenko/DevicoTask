@@ -9,7 +9,7 @@ public class Main {
         String temperature = scanner.nextLine();
         double value = 0;
         double temperatureValue = formatter.formatChecker(temperature,  value);
-        temperatureHandler.handler(temperatureValue);
+        System.out.println(temperatureHandler.handler(temperatureValue));
 
     }
 }

@@ -1,17 +1,24 @@
 public class TemperatureHandler {
-    public void handler(double temperature){
+    public String handler(double temperature){
+        String res;
         if (temperature >= -50 && temperature <= -1){
-            System.out.println("It’s super cold today. Be sure you dress well!");
+            res ="It’s super cold today. Be sure you dress well!";
+            return res;
         } else if(temperature >= 0 && temperature <= 10){
-            System.out.println("It’s windy outside, but we are sure you will enjoy your day!");
+           res = "It’s windy outside, but we are sure you will enjoy your day!";
+           return res;
         } else if (temperature >= 11 && temperature <= 30){
-            System.out.println("It’s time for outdoor walking!");
+            res ="It’s time for outdoor walking!";
+            return res;
         } else if (temperature >= 31 && temperature <= 40){
-            System.out.println("It's so hot outside!");
+          res ="It's so hot outside!";
+          return res;
         } else if (temperature >= 41 && temperature <= 50){
-            System.out.println("Welcome to hell!");
+            res =("Welcome to hell!");
+            return res;
         } else{
-            System.out.println("Please re-check results in 5 mins");
+           res =("Please re-check results in 5 mins");
+           return res;
         }
     }
 }
