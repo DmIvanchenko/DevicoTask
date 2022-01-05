@@ -1,18 +1,24 @@
-import java.util.Scanner;
-
 public class TemperatureFormatter {
-    public double formatChecker(String str, double t){
-        if (str.charAt(0)!='+' && str.charAt(0)!= '-' && str.charAt(str.length()-1)!= 'C'){
+    public Double formatChecker(String str, Double t){
+        char lastChar = str.charAt(str.length()-1);
+        if (str.charAt(0)!='+' && str.charAt(0)!= '-' ){
             System.out.println("Неправильный формат ввода. необходимо ввести строку в формате +NС\n"
             + "где N - абсолютное значение температуры, + или - являются обязательными параметрами");
-            System.exit(0);
-        } else {
+            t= null;
+
+        } else if ( lastChar != 'C'){
+            System.out.println("Неправильный формат ввода. необходимо ввести строку в формате +NС\n"
+                    + "где N - абсолютное значение температуры, + или - являются обязательными параметрами");
+
+            t= null;
+
+        }else {
             t = formatter(str);
         }
         return t;
     }
 
-    public double formatter(String str){
+    public Double formatter(String str){
         double temperature = 0;
         if (str.charAt(0) == '+'){
             str = removeCharAt(str, 0);
@@ -28,7 +34,7 @@ public class TemperatureFormatter {
             double t = 0;
             System.out.println("Неправильный формат ввода. необходимо ввести строку в формате +NС\n"
                     + "где N - абсолютное значение температуры, + или - являются обязательными параметрами");
-            System.exit(0);
+            return null;
         }
         return temperature;
     }

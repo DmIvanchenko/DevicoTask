@@ -7,9 +7,15 @@ public class Main {
         TemperatureHandler temperatureHandler = new TemperatureHandler();
         Scanner scanner = new Scanner(System.in);
         String temperature = scanner.nextLine();
-        double value = 0;
-        double temperatureValue = formatter.formatChecker(temperature,  value);
-        System.out.println(temperatureHandler.handler(temperatureValue));
+        Double value = 0.0;
+        try{
+            double temperatureValue = formatter.formatChecker(temperature,  value);
+            System.out.println(temperatureHandler.handler(temperatureValue));
+        } catch (NullPointerException e){
+            System.out.println(e.getMessage());
+        }
+
+
 
     }
 }
